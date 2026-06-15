@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bingo816 賓果816 — 線上賓果號碼生成器</title>
+<meta name="description" content="Bingo816 賓果816，免費線上賓果號碼抽號機。支援1-100自訂號碼範圍、語音播報、彩色球動畫，適合活動抽獎、賓果遊戲使用。">
+<meta name="keywords" content="bingo816,賓果816,賓果號碼,賓果抽號,bingo號碼生成器,線上賓果,賓果遊戲,抽號機,bingo generator">
+<meta name="author" content="Bingo816">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bingo816.com/">
+
+<!-- Open Graph (Facebook / LINE 分享預覽) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bingo816 賓果816 — 線上賓果號碼生成器">
+<meta property="og:description" content="免費線上賓果抽號機，支援語音播報、彩色球動畫，立即開始抽號！">
+<meta property="og:url" content="https://bingo816.com/">
+<meta property="og:locale" content="zh_TW">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bingo816 賓果816 — 線上賓果號碼生成器">
+<meta name="twitter:description" content="免費線上賓果抽號機，支援語音播報、彩色球動畫。">
+
+<!-- JSON-LD 結構化資料 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bingo816 賓果816",
+  "alternateName": ["bingo816", "賓果816", "賓果號碼生成器"],
+  "description": "免費線上賓果號碼生成器，支援1-100自訂號碼範圍、語音播報、彩色球動畫，適合活動抽獎與賓果遊戲。",
+  "url": "https://bingo816.com/",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD"
+  },
+  "inLanguage": ["zh-TW"],
+  "keywords": "bingo816, 賓果816, 賓果號碼, 線上賓果, bingo generator"
+}
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,-apple-system,sans-serif;background:#d1faf6;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:1.5rem 1rem 3rem;}
+
+/* SEO 可見品牌標題（對搜尋引擎友善） */
+.brand-header{width:100%;max-width:680px;text-align:center;margin-bottom:1.25rem;}
+.brand-header h1{font-size:15px;font-weight:600;color:#064e49;letter-spacing:0.5px;}
+.brand-header p{font-size:11px;color:rgba(0,90,80,0.55);margin-top:2px;}
+
+.wrap{width:100%;max-width:680px;padding:1.5rem 1rem 2.5rem;position:relative;border-radius:28px;overflow:hidden;}
+.bg{position:absolute;inset:0;z-index:0;background:#b2f5f0;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.b1{width:400px;height:400px;background:#cffaf5;top:-130px;left:-100px;opacity:0.8;animation:bm1 11s ease-in-out infinite;}
+.b2{width:320px;height:320px;background:#99f6e4;top:20px;right:-80px;opacity:0.6;animation:bm2 14s ease-in-out infinite;}
+.b3{width:260px;height:260px;background:#e0fdf9;bottom:-70px;left:22%;opacity:0.75;animation:bm3 10s ease-in-out infinite;}
+.b4{width:210px;height:210px;background:#ccfbf1;bottom:50px;right:12%;opacity:0.55;animation:bm4 16s ease-in-out infinite;}
+.b5{width:170px;height:170px;background:#f0fdfb;top:38%;left:8%;opacity:0.5;animation:bm1 13s ease-in-out infinite reverse;}
+@keyframes bm1{0%,100%{transform:translate(0,0);}50%{transform:translate(28px,22px);}}
+@keyframes bm2{0%,100%{transform:translate(0,0);}50%{transform:translate(-22px,18px);}}
+@keyframes bm3{0%,100%{transform:translate(0,0);}50%{transform:translate(18px,-16px);}}
+@keyframes bm4{0%,100%{transform:translate(0,0);}50%{transform:translate(-14px,14px);}}
+canvas.pc{position:absolute;inset:0;pointer-events:none;z-index:1;}
+.shimmer{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 55%,rgba(255,255,255,.1) 100%);pointer-events:none;z-index:1;}
+.content{position:relative;z-index:3;}
+
+.card{background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:14px 16px;margin-bottom:14px;backdrop-filter:blur(18px);}
+.cr{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;}
+.cg{display:flex;flex-direction:column;gap:4px;flex:1;min-width:130px;}
+.cg label{font-size:11px;color:rgba(0,90,80,.7);font-weight:500;}
+.ci{display:flex;gap:6px;align-items:center;}
+.cg select,.cg input[type=number]{height:34px;border-radius:14px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.45);color:#064e49;padding:0 10px;font-size:13px;width:100%;font-weight:500;}
+.cg select option{background:#e0fdf9;color:#064e49;}
+.cg input[type=number]{width:72px;}
+.os{font-size:11px;color:rgba(0,90,80,.4);white-space:nowrap;}
+.vr{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.45);flex-wrap:wrap;}
+.vr label{font-size:11px;color:rgba(0,90,80,.7);font-weight:500;white-space:nowrap;}
+.vtgl{display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:rgba(0,90,80,.7);background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.65);border-radius:12px;padding:4px 10px;height:30px;transition:all .2s;}
+.vtgl.on{background:rgba(255,255,255,.65);color:#064e49;font-weight:500;}
+.vsel{height:30px;font-size:12px;border-radius:12px;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.4);color:#064e49;padding:0 8px;font-weight:500;}
+.vsel option{background:#e0fdf9;color:#064e49;}
+.vbg{font-size:10px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);border-radius:8px;padding:2px 8px;color:rgba(0,90,80,.6);}
+.vbg.ok{background:rgba(255,255,255,.6);color:#064e49;font-weight:500;}
+.vbg.err{background:rgba(255,100,100,.12);color:#b91c1c;border-color:rgba(255,100,100,.3);}
+.bg2{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.btn{height:36px;padding:0 18px;border-radius:14px;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.38);color:#064e49;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .18s;}
+.btn:hover{background:rgba(255,255,255,.6);}
+.btn:active{transform:scale(.96);}
+.btn.primary{background:rgba(255,255,255,.6);border-color:rgba(255,255,255,.85);color:#043d38;}
+.btn.danger{background:rgba(255,100,100,.12);border-color:rgba(255,120,120,.35);color:#b91c1c;}
+.btn.danger:hover{background:rgba(255,100,100,.25);}
+.btn:disabled{opacity:.3;cursor:not-allowed;transform:none;}
+.cfm{display:none;align-items:center;gap:10px;margin-top:10px;padding:10px 14px;background:rgba(255,100,100,.08);border:1px solid rgba(220,38,38,.2);border-radius:14px;}
+.cfm.show{display:flex;animation:fIn .18s ease;}
+@keyframes fIn{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+.cfm span{font-size:12px;color:#b91c1c;flex:1;}
+.cb{height:30px;padding:0 14px;border-radius:10px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid;transition:all .15s;}
+.cb.y{background:rgba(220,38,38,.12);border-color:rgba(220,38,38,.35);color:#b91c1c;}
+.cb.y:hover{background:rgba(220,38,38,.25);}
+.cb.n{background:rgba(255,255,255,.45);border-color:rgba(255,255,255,.7);color:#064e49;}
+.cb.n:hover{background:rgba(255,255,255,.68);}
+
+.ma{background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.55);border-radius:28px;padding:2.5rem 1rem 2rem;display:flex;flex-direction:column;align-items:center;margin-bottom:14px;position:relative;overflow:hidden;backdrop-filter:blur(14px);}
+.ms{position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.25) 0%,transparent 65%);pointer-events:none;}
+.mr{position:absolute;border-radius:50%;pointer-events:none;top:50%;left:50%;}
+.mr1{width:185px;height:185px;margin-top:-92px;margin-left:-92px;border:1.5px solid rgba(255,255,255,.4);animation:mr 3.8s ease-in-out infinite;}
+.mr2{width:275px;height:275px;margin-top:-137px;margin-left:-137px;border:1px solid rgba(255,255,255,.25);animation:mr 3.8s ease-in-out infinite .85s;}
+.mr3{width:365px;height:365px;margin-top:-182px;margin-left:-182px;border:1px solid rgba(255,255,255,.15);animation:mr 3.8s ease-in-out infinite 1.7s;}
+@keyframes mr{0%,100%{opacity:.1;}50%{opacity:.6;}}
+.bw{position:relative;z-index:2;margin-bottom:16px;}
+.ball{width:148px;height:148px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid rgba(255,255,255,.65);background:rgba(255,255,255,.28);backdrop-filter:blur(8px);transition:background .35s,border-color .35s;position:relative;overflow:hidden;}
+.ball::before{content:'';position:absolute;top:8px;left:18px;width:30px;height:16px;border-radius:50%;background:rgba(255,255,255,.35);transform:rotate(-35deg);}
+.bi{font-size:46px;animation:fe 3s ease-in-out infinite;}
+@keyframes fe{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-6px) rotate(3deg);}}
+.bnr{display:flex;align-items:baseline;}
+.dg{font-size:56px;font-weight:500;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.12);line-height:1;}
+.d2{opacity:0;transform:translateX(14px) scale(.6);transition:opacity 1.4s cubic-bezier(.22,1,.36,1),transform 1.4s cubic-bezier(.22,1,.36,1);}
+.d2.show{opacity:1;transform:none;}
+.bu{font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;}
+.bp{animation:bp .45s cubic-bezier(.34,1.56,.64,1);}
+@keyframes bp{0%{transform:scale(.5);}100%{transform:scale(1);}}
+.st{font-size:12px;color:rgba(0,90,80,.6);z-index:1;min-height:18px;text-align:center;}
+.tbw{width:100%;max-width:260px;height:4px;background:rgba(255,255,255,.25);border-radius:4px;margin-top:12px;z-index:1;overflow:hidden;}
+.tb{height:100%;background:rgba(255,255,255,.8);border-radius:4px;width:100%;transition:width .1s linear;}
+.sr{display:flex;gap:10px;margin-bottom:14px;}
+.sc{flex:1;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:12px 10px;text-align:center;backdrop-filter:blur(10px);}
+.sc .sv{font-size:22px;font-weight:500;color:#064e49;}
+.sc .sl{font-size:10px;color:rgba(0,90,80,.55);margin-top:2px;}
+.ha{background:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.55);border-radius:22px;padding:14px 16px;backdrop-filter:blur(12px);}
+.ht{font-size:12px;font-weight:500;color:rgba(0,90,80,.65);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;}
+.clr{font-size:11px;color:rgba(0,90,80,.4);background:none;border:none;cursor:pointer;padding:2px 8px;border-radius:8px;}
+.clr:hover{background:rgba(255,100,100,.12);color:#b91c1c;}
+.hb{display:flex;flex-wrap:wrap;gap:7px;min-height:40px;max-height:185px;overflow-y:auto;}
+.hball{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;border:2px solid rgba(255,255,255,.75);color:#fff;animation:pi .35s cubic-bezier(.34,1.56,.64,1);text-shadow:0 1px 4px rgba(0,0,0,.18);}
+@keyframes pi{from{transform:scale(0) rotate(-15deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
+.eh{color:rgba(0,90,80,.38);font-size:12px;padding:8px 0;}
+.cp{position:fixed;pointer-events:none;border-radius:3px;animation:cf 1.3s ease-in forwards;}
+@keyframes cf{0%{opacity:1;transform:translateY(-10px) rotate(0);}100%{opacity:0;transform:translateY(115vh) rotate(800deg);}}
+@keyframes bO{0%{transform:scale(.8);opacity:.9;}100%{transform:scale(2.8);opacity:0;}}
+
+/* SEO 頁尾說明（給 Google 看的內容） */
+.seo-footer{width:100%;max-width:680px;margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,.3);border-radius:18px;backdrop-filter:blur(10px);}
+.seo-footer h2{font-size:13px;font-weight:600;color:#064e49;margin-bottom:6px;}
+.seo-footer p{font-size:12px;color:rgba(0,80,70,.65);line-height:1.7;}
+</style>
+</head>
+<body>
+
+<!-- 品牌 h1，對 SEO 重要，視覺上低調 -->
+<header class="brand-header">
+  <h1>Bingo816 · 賓果816</h1>
+  <p>免費線上賓果號碼生成器 · 支援語音播報 · 彩色球動畫</p>
+</header>
+
+<div class="wrap">
+  <div class="bg">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div>
+    <canvas class="pc" id="pc"></canvas>
+    <div class="shimmer"></div>
+  </div>
+  <div class="content">
+    <div class="card">
+      <div class="cr">
+        <div class="cg">
+          <label>號碼範圍 (1 ~ N)</label>
+          <div class="ci">
+            <select id="mns" onchange="syncMax(this.value)">
+              <option value="30">30</option><option value="50">50</option><option value="60">60</option>
+              <option value="75">75</option><option value="80" selected>80</option><option value="90">90</option>
+              <option value="100">100</option><option value="0">自訂...</option>
+            </select>
+            <span class="os">或</span>
+            <input type="number" id="mni" min="2" max="999" value="80" oninput="syncMaxInp(this.value)">
+          </div>
+        </div>
+        <div class="cg">
+          <label>抽號間隔 (秒)</label>
+          <div class="ci">
+            <select id="ivs" onchange="syncSec(this.value)">
+              <option value="1">1 秒</option><option value="2">2 秒</option><option value="3">3 秒</option>
+              <option value="4">4 秒</option><option value="5">5 秒</option><option value="7" selected>7 秒</option>
+              <option value="10">10 秒</option><option value="15">15 秒</option><option value="20">20 秒</option>
+              <option value="0">自訂...</option>
+            </select>
+            <span class="os">或</span>
+            <input type="number" id="ivi" min="1" max="120" value="7" oninput="syncSecInp(this.value)" style="width:64px">
+          </div>
+        </div>
+      </div>
+      <div class="vr">
+        <label><i class="ti ti-volume" style="font-size:14px;vertical-align:-2px;margin-right:3px"></i>語音播報</label>
+        <button class="vtgl" id="vtgl" onclick="toggleVoice()">
+          <i class="ti ti-microphone-off" id="vi"></i><span id="vl">已關閉</span>
+        </button>
+        <select id="vlang" class="vsel" onchange="updateVoice()">
+          <option value="zh-TW">中文（台灣）</option><option value="zh-CN">中文（大陸）</option>
+          <option value="en-US">English (US)</option><option value="ja-JP">日本語</option>
+        </select>
+        <select id="vspd" class="vsel">
+          <option value="0.7">慢速</option><option value="1" selected>正常</option><option value="1.3">快速</option>
+        </select>
+        <span class="vbg" id="vbg">尚未偵測</span>
+      </div>
+      <div class="bg2">
+        <button class="btn primary" id="bs" onclick="startGame()"><i class="ti ti-player-play"></i> 開始</button>
+        <button class="btn" id="bp" onclick="pauseGame()" disabled><i class="ti ti-player-pause"></i> 暫停</button>
+        <button class="btn danger" id="be" onclick="askStop()" disabled><i class="ti ti-square"></i> 結束</button>
+      </div>
+      <div class="cfm" id="cfm">
+        <span>確定要結束抽號嗎？</span>
+        <button class="cb n" onclick="cancelStop()">取消</button>
+        <button class="cb y" onclick="confirmStop()">確定結束</button>
+      </div>
+    </div>
+
+    <div class="ma">
+      <div class="ms"></div>
+      <div class="mr mr1"></div><div class="mr mr2"></div><div class="mr mr3"></div>
+      <div class="bw">
+        <div class="ball" id="ball">
+          <span class="bi" id="bli">🎱</span>
+          <div id="bc" style="display:none;flex-direction:column;align-items:center;">
+            <div class="bnr"><span class="dg" id="d1"></span><span class="dg d2" id="d2"></span></div>
+            <span class="bu">號</span>
+          </div>
+        </div>
+      </div>
+      <div class="st" id="st">按「開始」開始抽號</div>
+      <div class="tbw" id="tbw" style="display:none"><div class="tb" id="tb"></div></div>
+    </div>
+
+    <div class="sr">
+      <div class="sc"><div class="sv" id="dc">0</div><div class="sl">已抽號碼</div></div>
+      <div class="sc"><div class="sv" id="rc">—</div><div class="sl">剩餘號碼</div></div>
+      <div class="sc"><div class="sv" id="ln">—</div><div class="sl">最新號碼</div></div>
+    </div>
+
+    <div class="ha">
+      <div class="ht">歷史紀錄 <button class="clr" onclick="clearHistory()">清除</button></div>
+      <div class="hb" id="hb"><span class="eh">尚未抽出號碼</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO 說明段落（Google 可讀取，讓搜尋結果更豐富） -->
+<footer class="seo-footer">
+  <h2>關於 Bingo816 賓果816</h2>
+  <p>
+    Bingo816（賓果816）是免費的線上賓果號碼生成器，適合辦公室活動、班遊抽獎、家庭遊戲等場合使用。
+    支援 1 到 100 自訂號碼範圍、1 到 20 秒自訂抽號間隔、中文語音播報，以及每顆球獨立彩色動畫效果。
+    搜尋 bingo816 或 賓果816 即可找到本頁面。
+  </p>
+</footer>
+
+<script>
+const C=['#ef4444','#f97316','#eab308','#22c55e','#06b6d4','#6366f1','#a855f7','#ec4899','#14b8a6','#f59e0b','#8b5cf6','#3b82f6'];
+let uC=[];
+function nC(){if(uC.length>=C.length)uC=[];const a=C.filter(c=>!uC.includes(c));const c=a[Math.floor(Math.random()*a.length)];uC.push(c);return c;}
+let pool=[],hist=[],tmr=null,tA=null,paused=false,running=false,tP=0,tM=7000;
+const STP=100;let vOn=false,voices=[],sV=null;
+function shuf(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function syncMax(v){if(v!=='0')document.getElementById('mni').value=v;}
+function syncMaxInp(v){const n=parseInt(v);if(!n||n<2)return;const s=document.getElementById('mns');s.value=[...s.options].find(o=>+o.value===n)?n:'0';}
+function syncSec(v){if(v!=='0')document.getElementById('ivi').value=v;}
+function syncSecInp(v){const n=parseInt(v);if(!n||n<1)return;const s=document.getElementById('ivs');s.value=[...s.options].find(o=>+o.value===n)?n:'0';}
+function gM(){return Math.max(2,parseInt(document.getElementById('mni').value)||80);}
+function gI(){return Math.max(1000,(parseInt(document.getElementById('ivi').value)||7)*1000);}
+const cv=document.getElementById('pc');let cx,cW,cH,pts=[];
+function initC(){cW=cv.width=cv.parentElement.offsetWidth;cH=cv.height=cv.parentElement.offsetHeight;cx=cv.getContext('2d');}
+function mkP(){return{x:Math.random()*cW,y:Math.random()*cH,r:1.5+Math.random()*3,vx:(Math.random()-.5)*.4,vy:-.3-Math.random()*.5,a:.5+Math.random()*.5,da:-.003-Math.random()*.003};}
+function tick(){if(!cx)return;cx.clearRect(0,0,cW,cH);while(pts.length<38)pts.push(mkP());pts=pts.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.da;if(p.a<=0)return false;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`rgba(255,255,255,${p.a.toFixed(2)})`;cx.fill();return true;});requestAnimationFrame(tick);}
+setTimeout(()=>{try{initC();tick();}catch(e){}},300);
+function iV(){voices=window.speechSynthesis?speechSynthesis.getVoices():[];const b=document.getElementById('vbg');if(!window.speechSynthesis){b.textContent='不支援';b.className='vbg err';return;}b.textContent=voices.length?`${voices.length} 個聲音`:'載入中...';b.className=voices.length?'vbg ok':'vbg';uV();}
+function uV(){const lang=document.getElementById('vlang').value;voices=speechSynthesis.getVoices();sV=voices.find(v=>v.lang===lang)||voices.find(v=>v.lang.startsWith(lang.split('-')[0]))||null;const b=document.getElementById('vbg');if(sV){b.textContent=sV.name.slice(0,16);b.className='vbg ok';}else if(voices.length){b.textContent='找不到聲音';b.className='vbg err';}}
+function toggleVoice(){if(!window.speechSynthesis){alert('不支援語音播報');return;}vOn=!vOn;const btn=document.getElementById('vtgl'),ic=document.getElementById('vi'),lb=document.getElementById('vl');if(vOn){btn.className='vtgl on';ic.className='ti ti-microphone';lb.textContent='語音開啟';if(!voices.length)iV();spkT();}else{btn.className='vtgl';ic.className='ti ti-microphone-off';lb.textContent='已關閉';speechSynthesis.cancel();}}
+function spk(n){if(!vOn||!window.speechSynthesis)return;speechSynthesis.cancel();const lang=document.getElementById('vlang').value,rate=parseFloat(document.getElementById('vspd').value)||1;uV();const u=new SpeechSynthesisUtterance();u.lang=lang;u.rate=rate;if(sV)u.voice=sV;u.text=lang.startsWith('zh')?`第 ${n} 號`:lang.startsWith('ja')?`${n}番`:`Number ${n}`;speechSynthesis.speak(u);}
+function spkT(){setTimeout(()=>{const lang=document.getElementById('vlang').value,rate=parseFloat(document.getElementById('vspd').value)||1;uV();const u=new SpeechSynthesisUtterance();u.lang=lang;u.rate=rate;if(sV)u.voice=sV;u.text=lang.startsWith('zh')?'語音播報已開啟':lang.startsWith('ja')?'音声が有効です':'Voice enabled';speechSynthesis.speak(u);},200);}
+function setIdle(){const b=document.getElementById('ball');b.style.background='rgba(255,255,255,.28)';b.style.borderColor='rgba(255,255,255,.65)';document.getElementById('bli').style.display='';document.getElementById('bc').style.display='none';document.getElementById('d2').className='dg d2';}
+function showN(n,col){const s=String(n),b=document.getElementById('ball');b.style.background=col+'44';b.style.borderColor=col+'99';b.classList.remove('bp');void b.offsetWidth;b.classList.add('bp');document.getElementById('bli').style.display='none';document.getElementById('bc').style.display='flex';const d1=document.getElementById('d1'),d2=document.getElementById('d2');d1.textContent=s[0]||'';if(s.length>=2){d2.textContent=s[1];d2.style.display='inline-block';d2.className='dg d2';setTimeout(()=>d2.classList.add('show'),80);}else{d2.textContent='';d2.style.display='none';}}
+function burst(col){const ma=document.querySelector('.ma');for(let i=0;i<3;i++){setTimeout(()=>{const r=document.createElement('div');r.style.cssText=`position:absolute;border-radius:50%;border:2px solid ${col};top:50%;left:50%;width:80px;height:80px;margin-top:-40px;margin-left:-40px;pointer-events:none;animation:bO .7s ease-out forwards;`;ma.appendChild(r);setTimeout(()=>r.remove(),750);},i*120);}}
+function conf(col){const cs=[col,'#fff','rgba(255,255,255,.9)','#a7f3ee','#ccfbf1','#fde68a'];for(let i=0;i<30;i++){setTimeout(()=>{const el=document.createElement('div');el.className='cp';const w=5+Math.random()*8,h=4+Math.random()*7;el.style.cssText=`width:${w}px;height:${h}px;left:${5+Math.random()*90}%;top:0;background:${cs[Math.floor(Math.random()*cs.length)]};animation-delay:${Math.random()*.45}s;animation-duration:${1+Math.random()*.7}s`;document.body.appendChild(el);setTimeout(()=>el.remove(),2100);},i*14);}}
+function updS(){document.getElementById('dc').textContent=hist.length;document.getElementById('rc').textContent=pool.length;document.getElementById('ln').textContent=hist.length?hist[hist.length-1]:'—';}
+function addB(n,col){const ct=document.getElementById('hb'),e=ct.querySelector('.eh');if(e)e.remove();const b=document.createElement('div');b.className='hball';b.title=`${n} 號`;b.textContent=n;b.style.background=col;b.style.borderColor='rgba(255,255,255,.75)';ct.appendChild(b);ct.scrollTop=ct.scrollHeight;}
+function startBar(){clearInterval(tA);tP=0;tM=gI();const bar=document.getElementById('tb');bar.style.width='100%';tA=setInterval(()=>{if(paused)return;tP+=STP;bar.style.width=Math.max(0,100-tP/tM*100)+'%';},STP);}
+function drawNext(){if(pool.length===0){document.getElementById('st').textContent='🎉 所有號碼已抽完！';doStop();return;}const n=pool.shift(),col=nC();hist.push(n);showN(n,col);burst(col);document.getElementById('st').textContent=`抽出號碼：${n} 號`;addB(n,col);updS();conf(col);spk(n);startBar();}
+function startGame(){if(paused){paused=false;document.getElementById('bp').innerHTML='<i class="ti ti-player-pause"></i> 暫停';document.getElementById('st').textContent='繼續抽號中...';return;}pool=shuf([...Array(gM())].map((_,i)=>i+1));hist=[];uC=[];document.getElementById('hb').innerHTML='<span class="eh">尚未抽出號碼</span>';setIdle();updS();cancelStop();running=true;document.getElementById('bs').disabled=true;document.getElementById('bp').disabled=false;document.getElementById('be').disabled=false;document.getElementById('mns').disabled=true;document.getElementById('mni').disabled=true;document.getElementById('ivs').disabled=true;document.getElementById('ivi').disabled=true;document.getElementById('tbw').style.display='block';drawNext();tmr=setInterval(()=>{if(!paused)drawNext();},gI());}
+function pauseGame(){if(!running)return;paused=!paused;document.getElementById('bp').innerHTML=paused?'<i class="ti ti-player-play"></i> 繼續':'<i class="ti ti-player-pause"></i> 暫停';document.getElementById('st').textContent=paused?'⏸ 已暫停':'繼續抽號中...';}
+function askStop(){document.getElementById('cfm').className='cfm show';}
+function cancelStop(){document.getElementById('cfm').className='cfm';}
+function confirmStop(){cancelStop();doStop();}
+function doStop(){clearInterval(tmr);clearInterval(tA);tmr=null;running=false;paused=false;document.getElementById('bs').disabled=false;document.getElementById('bp').disabled=true;document.getElementById('bp').innerHTML='<i class="ti ti-player-pause"></i> 暫停';document.getElementById('be').disabled=true;document.getElementById('mns').disabled=false;document.getElementById('mni').disabled=false;document.getElementById('ivs').disabled=false;document.getElementById('ivi').disabled=false;document.getElementById('tbw').style.display='none';if(pool.length>0||hist.length===0)document.getElementById('st').textContent='已結束。按「開始」重新抽號';}
+function clearHistory(){hist=[];uC=[];document.getElementById('hb').innerHTML='<span class="eh">尚未抽出號碼</span>';updS();}
+document.getElementById('rc').textContent=gM();
+if(window.speechSynthesis){if(speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=iV;setTimeout(iV,300);}
+</script>
+</body>
+</html>
